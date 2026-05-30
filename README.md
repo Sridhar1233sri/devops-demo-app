@@ -34,4 +34,3 @@ Open the application:
 ## Deployment URL http://54.172.178.171
 
 
-![Uploading image.png…]()
