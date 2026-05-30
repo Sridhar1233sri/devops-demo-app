@@ -2,27 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('GitHub Checkout') {
+
+        stage('Checkout') {
             steps {
-                echo 'Code pulled from GitHub successfully!'
+                echo 'Code fetched from GitHub'
             }
         }
 
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Building application...'
+                sh 'docker build -t devops-demo .'
             }
         }
 
-        stage('Test') {
+        stage('Verify Image') {
             steps {
-                echo 'Running tests...'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deployment successful!'
+                sh 'docker images'
             }
         }
     }
